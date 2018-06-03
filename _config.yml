@@ -13,23 +13,117 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MyRandomStuff
-email: andrew@homeemail.me.uk
-description: > # this means to ignore newlines until "baseurl:"
-  Ramdom things i'm thinking about, working on, or doing...
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://blog.andyalexander.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: andyalexander11
-github_username:  andyalexander
+title                     : MyRandomStuff
+title_separator           : "-"
+
+name                      : Andy Alexander
+email                     : andrew@homeemail.me.uk
+description               : Ramdom things i'm thinking about, working on, or doing...
+baseurl                   : "" # the subpath of your site, e.g. /blog
+url                       : "http://blog.andyalexander.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Social Sharing
+twitter:
+  username               : andyalexander11
+
+# Search
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
+search_provider          : lunr # lunr (default), algolia
+
+# Site Author
+author:
+  name             : "Andy Alexander"
+  avatar           : "https://avatars1.githubusercontent.com/u/1913261?s=460&v=4" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Data scientist and geek"
+  location         : "London, UK"
+  email            :
+  uri              :
+  home             : # null (default), "absolute or relative url to link to author home"
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  flickr           :
+  facebook         :
+  foursquare       :
+  github           : "andyalexander"
+  gitlab           :
+  google_plus      :
+  keybase          :
+  instagram        :
+  lastfm           :
+  linkedin         : "andyalexanderuk" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  pinterest        :
+  soundcloud       :
+  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
+  steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
+  tumblr           :
+  twitter          : "andyalexander11"
+  vine             :
+  weibo            :
+  xing             :
+  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
+
+
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  # - jekyll-archives
+  - jekyll-relates-posts
 
 # Build settings
 markdown: kramdown
-theme: minima
-gems:
-  - jekyll-feed
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "default" # "default," "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+title_separator: "|"
+
+# Pagination
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+
+# Archive settings
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - year
+#     - tags
+#   layouts:
+#     category            : category-archive
+#     tag                 : tag-archive
+#   permalinks:
+#     year                : '/archives/date/:year/'
+#     month               : '/archives/date/:year/:month/'
+#     day                 : '/archives/date/:year/:month/:day/'
+#     tag                 : '/archives/tags/:name/'
+#     category            : '/archives/categories/:name/'
+
+
+
 exclude:
   - Gemfile
   - Gemfile.lock
 
-# Permalinks
-permalink:        pretty
+include:
+  - _pages

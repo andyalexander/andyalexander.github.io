@@ -1,9 +1,7 @@
 ---
-
-layout: post
-title: "Setting up a raspberry pi VPN"
-date: 2017-05-23
-categories: raspi
+title           : "Setting up a raspberry pi VPN"
+categories      : technology
+tags            : raspi
 ---
 
 A VPN is something I like to have in place for those times where I manage to forget something. Getting the raspi to do this has gotten much easier recently, without needing to do all the config / keygen yourself.
